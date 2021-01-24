@@ -27,15 +27,22 @@ a {
     width: 100%;
     height: 100vh;
     display: flex;
+    align-items: center;
+}
+.carousel {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 .item-a {
+    opacity: .5;
     padding: 1rem;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 }
 .item-a:hover {
     transform: translateY(-20px) scale(1.005) translateZ(0);
+    opacity: 1;
 }
 .box {
     width: 329px; 
@@ -52,10 +59,12 @@ a {
     margin-bottom: 1.5rem;
 }
 .faded-sign {
+    font-family: 'Rockwell-Extra-Bold';
     font-size: 1.75rem;
     color: #B5B5B5;
     display: inline;
 }
+
 
   
   
