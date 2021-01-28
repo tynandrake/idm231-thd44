@@ -9,7 +9,40 @@
 </head>
 <body>
 
+    <div class="input-group mb-2">
+        <p class="form-box">
+            <label for="month" title="Month">Month</label>
+                <select name="month" id="month" required>
+                    <option ></option>
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                </select>
+        </p> 
+    </div>
+               
+    <div class="input-group mb-3">
+        <form>
+            <label for="day" title="Day">Day</label>
+            <input type="number" class="form-control" id="userInput" placeholder="Enter Day" min="1" max="31">
+            <div class="input-group-append">
+            <input type="submit" class="btn btn-secondary" id="subButton" value="Search">
+            </div>
+        </form>
+    </div>   
+
+
     <div class="container">
+
             <button class="item-a" id="miseducation" data-file="ex_factor">
                 <div class="box">
                     <img src="images/miseducational_of_laurynhill.jpg" alt="miseducation of lauryn hill cover">
@@ -130,18 +163,10 @@
                             labore nostrum aspernatur facere neque dolores iste culpa illum est eum possimus ad nobis eaque quae.</p>
                     </div>
                 </div>    
-            </button>            
+            </button>   
+        
     </div>
     <audio src="" id="music-player"></audio>
     <script src="main.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
 </html>
