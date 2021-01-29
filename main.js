@@ -12,7 +12,7 @@ const sagittarius = document.getElementById('eternal-atake');
 const capricorn = document.getElementById('tpab');
 
 // Expand Card
-let buttons = document.querySelectorAll('button .box'); 
+let buttons = document.querySelectorAll('.box'); 
 
 buttons.forEach(button => {
     button.addEventListener('click', function () {
@@ -100,11 +100,11 @@ const $form = document.querySelector('.input-group.mb-3 form');
 $form.addEventListener('submit', getInput);
 
 //Display Album
-
+// create function
 // if ((date[0] == 'january' && date[1]>=20) || (date[0] == 'february' && date[1]<=18)) {
 //     document.getElementById('miseducation').innerHTML = ;
 // } else if ((date[0] == 'february' && date[1]>=19) || (date[0] == 'march' && date[1]<=20)) {
-//     pisces;
+//     pisces.;
 // } else if ((date[0] == 'march' && date[1]>=21) || (date[0] == 'april' && date[1]<=19)) {
 //     aries;
 // } else if ((date[0] == 'april' && date[1]>=20) || (date[0] == 'may' && date[1]<=20)) {
@@ -126,16 +126,4 @@ $form.addEventListener('submit', getInput);
 // } else if ((date[0] == 'december' && date[1]>=22) || (date[0] == 'january' && date[1]<=19)) {
 //     capricorn;
 // };
-
-// aquarius.addEventListener('click' , function() {}); 
-// pisces = addEventListener('click' , function() {pisces});
-// aries = addEventListener('click' , function() {aries});
-// taurus = addEventListener('click' , function() {taurus});
-// gemini = addEventListener('click' , function() {gemini});
-// cancer = addEventListener('click' , function() {cancer});
-// leo = addEventListener('click' , function() {leo});
-// virgo = addEventListener('click' , function() {virgo});
-// libra = addEventListener('click' , function() {libra});
-// scorpio = addEventListener('click' , function() {scorpio});
-// sagittarius = addEventListener('click' , function() {sagittarius});
-// capricorn = addEventListener('click' , function() {capricorn});
+// animate all divs, activate active 
