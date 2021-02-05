@@ -12,7 +12,7 @@ const sagittarius = document.getElementById('eternal-atake');
 const capricorn = document.getElementById('tpab');
 
 // Expand Card
-let buttons = document.querySelectorAll('.box'); 
+let buttons = document.querySelectorAll('.album'); 
 
 buttons.forEach(button => {
     button.addEventListener('click', function () {

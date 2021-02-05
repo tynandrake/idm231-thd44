@@ -14,6 +14,9 @@
     src: url(fonts/Georgia.woff2) format('woff2'),
          url(fonts/Georgia.woff) format('woff');
 }
+body {
+    overflow: hidden;
+}
 p {
     font-size: 1rem;
     font-family: 'Georgia';
@@ -24,22 +27,30 @@ a {
 select, form {
     font-family: 'Georgia';
 }
+img {
+    max-width: 100%;
+}
 
 
 /* General Layout */
 .container {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+.col {
+    display: flex;
+    flex-direction: row;
+}
 .container-date {
     position: absolute;
-    left: 640px;
+    left: 840px;
     top: 50px;
     padding: 1rem;
 }
+
 /* User Input */
 .form-control {
     width: 90px;
@@ -54,59 +65,62 @@ select, form {
     padding-right: 1rem;
 }
 
-/* Cards */
-.box {
-    width: 186px; 
-    height: 186px;
-    overflow: hidden;
-    transition: 0.3s ease-in;
-}
-.box img {
-    width: 100%;
-}
-.card {
-    border-radius: 1rem;
+
+
+.album {
     position: relative;
-    background-color: white;
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-    left: 0px;
-    content: attr(data-file);
-	color: inherit;
-	border: none;
-	font: inherit;
-    outline: inherit;
-    text-align: left;  
-}
-.title {
-    font-family: 'Rockwell-Extra-Bold';
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-.details{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.description {
-    padding-bottom: 1rem;
-}
-.faded-sign {
-    font-family: 'Rockwell-Extra-Bold';
-    color: #B5B5B5;
-    display: inline;
+    width: 186px;
+    height: 186px;
+    margin: .25rem;
 }
 
-/* Animations */
-.card:hover {
-    transform: scale(1.1);
-    transition: 0.4s ease-out;
+
+.front {
+    transition: 250ms;
+}
+.back {
+    opacity: 0;
+}
+.background {
+    background: rgb(37, 34, 68);
+    position: absolute;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: -1;
+    transform: scale(.6, 1.2);
+    border-radius: 0.5rem;
+    opacity: 0;
+}
+
+.active, .album:hover {
     z-index: 999;
 }
-
-.active, .card:active {
-    transform: scale(1.4);
+.active, .album:hover .background {
+    transition: transform 350ms ease-in-out, opacity 100ms linear;
+    transform: scale(1.3, 1.6) translateY(25%);
+    opacity: 1;
+}
+.active, .album:hover .front {
+    transform: translateY(-40%);
+}
+.active, .album:hover .back {
+    transform: translateY(-40%);
+    opacity: 1;
 }
 
+
+
+
+
+.title {
+    font-family: 'Rockwell-Extra-Bold';
+    margin-bottom: 0.5rem;
+}
+.description {
+    font-size: 0.85rem;
+}
 
 
 
