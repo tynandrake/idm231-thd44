@@ -94,18 +94,60 @@ img {
     opacity: 0;
 }
 
-.active, .album:hover {
+#miseducation .background {
+    background: #faeec5;
+}
+#blonde .background {
+    background: #ace095;
+}
+#mbdtf .background {
+    background: #df8383;
+}
+#blueprint .background {
+    background: #839fdf;
+}
+#telefone .background {
+    background: #b592c4;
+}
+#take-care .background {
+    background: #e4dbb5;
+}
+#stankonia .background {
+    background: #dbdbdb;
+}
+#swimming .background {
+    background: #dfb2c4;
+}
+#under-pressure .background {
+    background: #e0cd9b;
+}
+#monster .background {
+    background: #c87d76;
+}
+#eternal-atake .background {
+    background: #8fc2d8;
+}
+#tpab .background {
+    background: #d2d5d6;
+}
+
+.album:not(.no-hover):hover .front{
+    transform: translateY(-15%);
+    overflow: hidden;
+}
+
+.active{
     z-index: 999;
 }
-.active, .album:hover .background {
+.active .background {
     transition: transform 350ms ease-in-out, opacity 100ms linear;
     transform: scale(1.3, 1.6) translateY(25%);
     opacity: 1;
 }
-.active, .album:hover .front {
-    transform: translateY(-40%);
+.active .front {
+    transform: translateY(-45%);
 }
-.active, .album:hover .back {
+.active .back {
     transform: translateY(-40%);
     opacity: 1;
 }
@@ -118,8 +160,8 @@ img {
     font-family: 'Rockwell-Extra-Bold';
     margin-bottom: 0.5rem;
 }
-.description {
-    font-size: 0.85rem;
+.description p{
+    font-size: 0.95rem;
 }
 
 

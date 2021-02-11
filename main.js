@@ -16,6 +16,7 @@ let buttons = document.querySelectorAll('.album');
 
 buttons.forEach(button => {
     button.addEventListener('click', function () {
+        this.classList.toggle('no-hover');
         buttons.forEach(div => div.classList.remove('active'));
         this.classList.toggle('active');
     });
