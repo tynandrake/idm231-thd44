@@ -11,6 +11,157 @@ const scorpio = document.getElementById('monster');
 const sagittarius = document.getElementById('eternal-atake');
 const capricorn = document.getElementById('tpab');
 
+aquarius.addEventListener('click', function (ev) {
+    console.log('aquarius button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+pisces.addEventListener('click', function (ev) {
+    console.log('pisces button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+aries.addEventListener('click', function (ev) {
+    console.log('aries button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+taurus.addEventListener('click', function (ev) {
+    console.log('taurus button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+gemini.addEventListener('click', function (ev) {
+    console.log('gemini button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+cancer.addEventListener('click', function (ev) {
+    console.log('cancer button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+leo.addEventListener('click', function (ev) {
+    console.log('leo button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+virgo.addEventListener('click', function (ev) {
+    console.log('virgo button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+libra.addEventListener('click', function (ev) {
+    console.log('libra button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+scorpio.addEventListener('click', function (ev) {
+    console.log('scorpio button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+sagittarius.addEventListener('click', function (ev) {
+    console.log('sagittarius button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+capricorn.addEventListener('click', function (ev) {
+    console.log('capricorn button clicked: ' + ev.target.id);
+    const idName = ev.target.id;
+    userPicked(idName);
+  });
+
+function userPicked(whichOne) {
+    console.log('userPicked called: ' + whichOne);
+    switch (whichOne) {
+      case 'miseducation':
+            buttons
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'blonde':
+            buttons
+        // displayObj.src = 'img/ful_scorpio.png';
+         // display date range
+        // display description
+        // play sound
+        break;  
+      case 'mbdtf':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'blueprint':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'telefone':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'take-care':
+            buttons
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'stankonia':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'swimming':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'under-pressure':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'monster':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'eternal-atake':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      case 'tpab':
+            buttons
+        // displayObj.src = 'img/ful_aquarius.png';
+        // display date range
+        // display description
+        // play sound
+        break;
+      default:
+        // displayObj.src = 'img/ful_blank.png';
+    }
+  }
+
 // Expand Card
 let buttons = document.querySelectorAll('.album'); 
 
@@ -91,40 +242,49 @@ function getInput(evt) {
     const $userMonth = document.getElementById('month');
     const userMonth = $userMonth.value;  
 
-    date.push(userMonth , userInput);
+    date.push(`Month: ` + userMonth ,`Day: ` + userInput);
     document.forms[0].reset();
 
     console.log({date});
+    
+    let AstroSign = "";
+
+    if ((userMonth == 'december' && userInput >= 22) || (userMonth == 1 && userInput <= 19)) {
+        AstroSign = "tpab";
+      } else if ((userMonth == 'november' && userInput >= 22) || (userMonth == 'december' && userInput <= 21)) {
+        AstroSign = "eternal-atake";
+      } else if ((userMonth == 'october' && userInput >= 24) || (userMonth == 'november' && userInput <= 21)) {
+        AstroSign = "monster";
+      } else if ((userMonth == 'september' && userInput >= 23) || (userMonth == 'october' && userInput <= 23)) {
+        AstroSign = "under-pressure";
+      } else if ((userMonth == 'august' && userInput >= 23) || (userMonth == 'september' && userInput <= 22)) {
+        AstroSign = "swimming";
+      } else if ((userMonth == 'july' && userInput >= 23) || (userMonth == 'august' && userInput <= 22)) {
+        AstroSign = "stankonia";
+      } else if ((userMonth == 'june' && userInput >= 22) || (userMonth == 'july' && userInput <= 22)) {
+        AstroSign = "take-care";
+      } else if ((userMonth == 'may' && userInput >= 21) || (userMonth == 'june' && userInput <= 21)) {
+        AstroSign = "telefone";
+      } else if ((userMonth == 'april' && userInput >= 20) || (userMonth == 'may' && userInput <= 20)) {
+        AstroSign = "blueprint";
+      } else if ((userMonth == 'march' && userInput >= 21) || (userMonth == 'april' && userInput <= 19)) {
+        AstroSign = "mbdtf";
+      } else if ((userMonth == 'february' && userInput >= 19) || (userMonth == 'march' && userInput <= 20)) {
+        AstroSign = "blonde";
+      } else if ((userMonth == 'january' && userInput >= 20) || (userMonth == 'february' && userInput <= 18)) {
+        AstroSign = "miseducation";
+      }
+
+    console.log('AstroSign is: ' + AstroSign);
+
+    userPicked(AstroSign);
+    
 };  
 
 const $form = document.querySelector('.input-group.mb-3 form');
 $form.addEventListener('submit', getInput);
 
 //Display Album
-// create function
-// if ((date[0] == 'january' && date[1]>=20) || (date[0] == 'february' && date[1]<=18)) {
-//     document.getElementById('miseducation').innerHTML = ;
-// } else if ((date[0] == 'february' && date[1]>=19) || (date[0] == 'march' && date[1]<=20)) {
-//     pisces.;
-// } else if ((date[0] == 'march' && date[1]>=21) || (date[0] == 'april' && date[1]<=19)) {
-//     aries;
-// } else if ((date[0] == 'april' && date[1]>=20) || (date[0] == 'may' && date[1]<=20)) {
-//     taurus;
-// } else if ((date[0] == 'may' && date[1]>=21) || (date[0] == 'june' && date[1]<=20)) {
-//     gemini;
-// } else if ((date[0] == 'june' && date[1]>=21) || (date[0] == 'july' && date[1]<=22)) {
-//     cancer;
-// } else if ((date[0] == 'july' && date[1]>=23) || (date[0] == 'august' && date[1]<=22)) {
-//     leo;
-// } else if ((date[0] == 'august' && date[1]>=23) || (date[0] == 'september' && date[1]<=22)) {
-//     virgo;
-// } else if ((date[0] == 'september' && date[1]>=23) || (date[0] == 'october' && date[1]<=22)) {
-//     libra;
-// } else if ((date[0] == 'october' && date[1]>=23) || (date[0] == 'november' && date[1]<=21)) {
-//     scorpio;
-// } else if ((date[0] == 'november' && date[1]>=22) || (date[0] == 'december' && date[1]<=21)) {
-//     sagittarius;
-// } else if ((date[0] == 'december' && date[1]>=22) || (date[0] == 'january' && date[1]<=19)) {
-//     capricorn;
-// };
+
+
 // animate all divs, activate active 
