@@ -164,6 +164,7 @@ function userPicked(whichOne) {
 
 // Expand Card
 let buttons = document.querySelectorAll('.album'); 
+let barrier = document.getElementsByClassName('.barrier')
 
 buttons.forEach(button => {
     button.addEventListener('click', function () {
@@ -172,6 +173,7 @@ buttons.forEach(button => {
         this.classList.toggle('active');
     });
 });
+
 
 
 // Audio
@@ -231,60 +233,86 @@ document.addEventListener('DOMContentLoaded', init);
         audio.play();
     };
 
-
 // Get Date
-let date = [];
+
 
 function getInput(evt) {
     evt.preventDefault();
-    const $userInput = document.getElementById('userInput');
-    const userInput = $userInput.value;
-    const $userMonth = document.getElementById('month');
-    const userMonth = $userMonth.value;  
+    
+    const $form = document.getElementById('userSubmit');
+    $form.addEventListener('submit', getInput);
 
-    date.push(`Month: ` + userMonth ,`Day: ` + userInput);
+    const userBday = new Date(document.getElementById('bday').value);
+    console.log('userBday is: ' + userBday);
+
+    let userMonth = userBday.getUTCMonth();
+    userMonth++;
+    console.log('userMonth is: ' + userMonth);
+
+
     document.forms[0].reset();
 
-    console.log({date});
+
     
     let AstroSign = "";
 
-    if ((userMonth == 'december' && userInput >= 22) || (userMonth == 1 && userInput <= 19)) {
-        AstroSign = "tpab";
-      } else if ((userMonth == 'november' && userInput >= 22) || (userMonth == 'december' && userInput <= 21)) {
-        AstroSign = "eternal-atake";
-      } else if ((userMonth == 'october' && userInput >= 24) || (userMonth == 'november' && userInput <= 21)) {
-        AstroSign = "monster";
-      } else if ((userMonth == 'september' && userInput >= 23) || (userMonth == 'october' && userInput <= 23)) {
-        AstroSign = "under-pressure";
-      } else if ((userMonth == 'august' && userInput >= 23) || (userMonth == 'september' && userInput <= 22)) {
-        AstroSign = "swimming";
-      } else if ((userMonth == 'july' && userInput >= 23) || (userMonth == 'august' && userInput <= 22)) {
-        AstroSign = "stankonia";
-      } else if ((userMonth == 'june' && userInput >= 22) || (userMonth == 'july' && userInput <= 22)) {
-        AstroSign = "take-care";
-      } else if ((userMonth == 'may' && userInput >= 21) || (userMonth == 'june' && userInput <= 21)) {
-        AstroSign = "telefone";
-      } else if ((userMonth == 'april' && userInput >= 20) || (userMonth == 'may' && userInput <= 20)) {
-        AstroSign = "blueprint";
-      } else if ((userMonth == 'march' && userInput >= 21) || (userMonth == 'april' && userInput <= 19)) {
-        AstroSign = "mbdtf";
-      } else if ((userMonth == 'february' && userInput >= 19) || (userMonth == 'march' && userInput <= 20)) {
-        AstroSign = "blonde";
-      } else if ((userMonth == 'january' && userInput >= 20) || (userMonth == 'february' && userInput <= 18)) {
-        AstroSign = "miseducation";
-      }
+    if ((userMonth == 12 && userBday >= 22) || (userMonth == 1 && userBday <= 19)) {
+      AstroSign = "tpab";
+    } else if ((userMonth == 11 && userBday >= 22) || (userMonth == 12 && userBday <= 21)) {
+      AstroSign = "eternal-atake";
+    } else if ((userMonth == 10 && userBday >= 24) || (userMonth == 11 && userBday <= 21)) {
+      AstroSign = "monster";
+    } else if ((userMonth == 9 && userBday >= 23) || (userMonth == 10 && userBday <= 23)) {
+      AstroSign = "under-pressure";
+    } else if ((userMonth == 8 && userBday >= 23) || (userMonth == 9 && userBday <= 22)) {
+      AstroSign = "swimming";
+    } else if ((userMonth == 7 && userBday >= 23) || (userMonth == 8 && userBday <= 22)) {
+      AstroSign = "stankonia";
+    } else if ((userMonth == 6 && userBday >= 22) || (userMonth == 7 && userBday <= 22)) {
+      AstroSign = "take-care";
+    } else if ((userMonth == 5 && userBday >= 21) || (userMonth == 6 && userBday <= 21)) {
+      AstroSign = "telefone";
+    } else if ((userMonth == 4 && userBday >= 20) || (userMonth == 5 && userBday <= 20)) {
+      AstroSign = "blueprint";
+    } else if ((userMonth == 3 && userBday >= 21) || (userMonth == 4 && userBday <= 19)) {
+      AstroSign = "mbdtf";
+    } else if ((userMonth == 2 && userBday >= 19) || (userMonth == 3 && userBday <= 20)) {
+      AstroSign = "blonde";
+    } else if ((userMonth == 1 && userBday >= 20) || (userMonth == 2 && userBday <= 18)) {
+      AstroSign = "miseducation";
+    }
 
     console.log('AstroSign is: ' + AstroSign);
 
     userPicked(AstroSign);
-    
-};  
+ 
+};
 
-const $form = document.querySelector('.input-group.mb-3 form');
+const $form = document.querySelector('.container-date form');
 $form.addEventListener('submit', getInput);
 
-//Display Album
 
+const modal = document.getElementById("myModal");
 
-// animate all divs, activate active 
+// Get the button that opens the modal
+const btn = document.getElementById("help-btn");
+
+// Get the <span> element that closes the modal
+const span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 

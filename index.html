@@ -8,58 +8,49 @@
     <link rel="stylesheet" href="master.css">
 </head>
 <body>
-    <div class="container-date">
-        <div class="input-group mb-3">
-            <form>
-            <div class="month-input">
-                <label for="month" title="Month">Month: </label>
-                <select name="month" id="month" required>
-                    <option ></option>
-                    <option value="january">January</option>
-                    <option value="february">February</option>
-                    <option value="march">March</option>
-                    <option value="april">April</option>
-                    <option value="may">May</option>
-                    <option value="june">June</option>
-                    <option value="july">July</option>
-                    <option value="august">August</option>
-                    <option value="september">September</option>
-                    <option value="october">October</option>
-                    <option value="november">November</option>
-                    <option value="december">December</option>
-                </select>
-            </div>
-            <div class="day-input">
-                <label for="day" title="Day">Day: </label>
-                <input type="number" class="form-control" id="userInput" placeholder="Enter Day" min="1" max="31">
-            </div>
-                <input type="submit" class="btn btn-secondary" id="subButton" value="Submit">
+    <div class="header-input">
+        <div class="container-date">
+            <form id="form-date">
+                <div>
+                    <p><input id="bday" type="date" required></p>
+                    <p><button id="userSubmit">Submit</button></p>
+                </div>    
             </form>
         </div>
-    </div>
-    <div class="help-button">
-        <button>
-            
+        <button id="help-btn">
+            <img src="images/help.svg" alt="help button">
         </button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Help</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Each of the albums on display are linked to a date on the zodiac calendar. Enter your birthday into the submition field 
+                        to discover which album aligns with your birthday.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container">
         <div class="col">
-            <div class="album" id="miseducation" data-file="ex_factor">
+            <button class="album" id="miseducation" data-file="ex_factor">
                 <div class="front">
                     <img src="images/miseducational_of_laurynhill.jpg" alt="miseducation of lauryn hill cover">
                 </div>
                 <div class="back">
-                <div class="details">
-                    <h3 class="title">The Miseducation Of Lauryn Hill</h3>
-                </div> 
-                <div class="description">
-                    <p>Released in 1998, The Miseducation of Lauryn Hill progressively blended neo-soul, R&B, and hip-hop seamlessly, 
-                        resulting in one of the most acclaimed albums of all time.</p>
-                </div>
+                    <div class="details">
+                        <h3 class="title">The Miseducation Of Lauryn Hill</h3>
+                    </div> 
+                    <div class="description">
+                        <p>The Miseducation of Lauryn Hill progressively blended neo-soul, R&B, and hip-hop seamlessly, 
+                            resulting in one of the most acclaimed albums of all time.</p>
+                    </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="blonde" data-file="pink_white">
+            </button>
+            <button class="album" id="blonde" data-file="pink_white">
                 <div class="front">
                     <img src="images/blonde.jpeg" alt="blonde cover">
                 </div>
@@ -73,8 +64,8 @@
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="mbdtf" data-file="power">
+            </button>
+            <button class="album" id="mbdtf" data-file="power">
                 <div class="front">
                     <img src="images/mbdtf1.jpg" alt="my beautiful dark twisted fantasy cover">
                 </div>
@@ -84,12 +75,12 @@
                 </div> 
                 <div class="description">
                     <p>My Beautiful Dark Twisted Fantasy is the fifth studio album by Kanye West. 
-                        It was released on November 22, 2010, by Def Jam Recordings and Roc-A-Fella Records.</p>
+                        It was released on November 22, 2010, by Def Jam Recordings.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="blueprint" data-file="u_dont_know">
+            </button>
+            <button class="album" id="blueprint" data-file="u_dont_know">
                 <div class="front">
                     <img src="images/bp1.jpg" alt="the blueprint cover">
                 </div>
@@ -98,15 +89,15 @@
                     <h3 class="title">The Blueprint</h3>
                 </div> 
                 <div class="description">
-                    <p>The Blueprint is the sixth studio album by American rapper Jay-Z. It was released on September 11, 2001, 
+                    <p>The Blueprint is the highly-acclaimed sixth studio album by American rapper Jay-Z. It was released on September 11, 2001, 
                         by Roc-A-Fella Records and Def Jam Recordings.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>     
+            </button>     
         </div>
         <div class="col">
-            <div class="album" id="telefone" data-file="diddy_bop">
+            <button class="album" id="telefone" data-file="diddy_bop">
                 <div class="front">
                     <img src="images/telefone.jpg" alt="telefone cover">
                 </div>
@@ -115,14 +106,13 @@
                     <h3 class="title">Telefone</h3>
                 </div> 
                 <div class="description">
-                    <p>Telefone is the debut mixtape by American rapper Noname. Originally announced in 2012, 
-                        the mixtape faced numerous delays and was finally released four years later on July 31, 
-                        2016 as a free digital download.</p>
+                    <p>Telefone is a mixtape by rapper Noname. Originally announced in 2012, the mixtape faced numerous delays 
+                        and was released four years later on July 31, 2016 as a free download.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="take-care" data-file="headlines">
+            </button>
+            <button class="album" id="take-care" data-file="headlines">
                 <div class="front">
                     <img src="images/take_care.jpg" alt="take care cover">
                 </div>
@@ -131,13 +121,13 @@
                     <h3 class="title">Take Care</h3>
                 </div> 
                 <div class="description">
-                    <p>Take Care is the second studio album by Canadian rapper Drake. It was released on November 15, 2011 
-                        by Young Money Entertainment, Cash Money Records and Universal Republic Records.</p>
+                    <p>Take Care is the second studio album by Canadian rapper Drake. It was released on November 15, 2011 by 
+                        Young Money Entertainment, Cash Money Records and Republic Records.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="stankonia" data-file="so_fresh_so_clean">
+            </button>
+            <button class="album" id="stankonia" data-file="so_fresh_so_clean">
                 <div class="front">
                     <img src="images/stankonia.jpg" alt="stankonia cover">
                 </div>
@@ -146,12 +136,13 @@
                     <h3 class="title">Stankonia</h3>
                 </div> 
                 <div class="description">
-                    <p>Stankonia is the fourth studio album by American hip hop duo OutKast. It was released on October 31, 2000, by LaFace Records.</p>
+                    <p>Stankonia is the fourth studio album by American hip-hop duo OutKast consisting of André 3000 & Big Boi. It was 
+                        released on October 31, 2000, by LaFace Records.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="swimming" data-file="2009">
+            </button>
+            <button class="album" id="swimming" data-file="2009">
                 <div class="front">
                     <img src="images/swimming.jpg" alt="swimming cover">
                 </div>
@@ -160,15 +151,15 @@
                     <h3 class="title">Swimming</h3>
                 </div> 
                 <div class="description">
-                    <p>Swimming is the fifth studio album by American rapper and singer Mac Miller and his last album to be released during his lifetime. 
-                        It was released on August 3, 2018 by REMember Music and Warner Bros. Records.</p>
+                    <p>Swimming is the fifth and final studio album by American rapper and singer Mac Miller. It was released on August 3, 2018 
+                        by REMember Music and Warner Bros. Records.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>     
+            </button>     
         </div>
         <div class="col">
-            <div class="album" id="under-pressure" data-file="gang_related">
+            <button class="album" id="under-pressure" data-file="gang_related">
                 <div class="front">
                     <img src="images/under_pressure.jpg" alt="under pressure cover">
                 </div>
@@ -181,8 +172,8 @@
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="monster" data-file="codeine_crazy">
+            </button>
+            <button class="album" id="monster" data-file="codeine_crazy">
                 <div class="front">
                     <img src="images/monster.jpg" alt="monster cover">
                 </div>
@@ -195,8 +186,8 @@
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="eternal-atake" data-file="">
+            </button>
+            <button class="album" id="eternal-atake" data-file="">
                 <div class="front">
                     <img src="images/eternal_atake.jpg" alt="eternal atake cover">
                 </div>
@@ -210,8 +201,8 @@
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>
-            <div class="album" id="tpab" data-file="alright">
+            </button>
+            <button class="album" id="tpab" data-file="alright">
                 <div class="front">
                     <img src="images/tpab.jpg" alt="to pimp a butterfly cover">
                 </div>
@@ -220,13 +211,14 @@
                     <h3 class="title">To Pimp A Butterfly</h3>
                 </div> 
                 <div class="description">
-                    <p>To Pimp a Butterfly is the third studio album by American rapper Kendrick Lamar. It was released on March 15, 2015, 
-                        by Top Dawg Entertainment, Aftermath Entertainment and Interscope Records.</p>
+                    <p>To Pimp a Butterfly is the third studio album by rapper Kendrick Lamar. It was released on March 15, 2015, 
+                        by T.D.E, Aftermath Entertainment and Interscope Records.</p>
                 </div>
                 </div>
             <div class="background"></div> 
-            </div>     
+            </button>     
         </div>
+
         
 
 
