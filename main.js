@@ -76,82 +76,82 @@ function userPicked(whichOne) {
     console.log('userPicked called: ' + whichOne);
     switch (whichOne) {
       case 'miseducation':
-            buttons
+            btn
         // display date range
         // display description
         // play sound
         break;
       case 'blonde':
-            buttons
+            btn
         // displayObj.src = 'img/ful_scorpio.png';
          // display date range
         // display description
         // play sound
         break;  
       case 'mbdtf':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'blueprint':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'telefone':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'take-care':
-            buttons
+            btn
         // display date range
         // display description
         // play sound
         break;
       case 'stankonia':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'swimming':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'under-pressure':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'monster':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'eternal-atake':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
         // play sound
         break;
       case 'tpab':
-            buttons
+            btn
         // displayObj.src = 'img/ful_aquarius.png';
         // display date range
         // display description
@@ -161,20 +161,6 @@ function userPicked(whichOne) {
         // displayObj.src = 'img/ful_blank.png';
     }
   }
-
-// Expand Card
-let buttons = document.querySelectorAll('.album'); 
-let barrier = document.getElementsByClassName('.barrier')
-
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        this.classList.toggle('no-hover');
-        buttons.forEach(div => div.classList.remove('active'));
-        this.classList.toggle('active');
-    });
-});
-
-
 
 // Audio
 document.addEventListener('DOMContentLoaded', init);
@@ -292,27 +278,39 @@ const $form = document.querySelector('.container-date form');
 $form.addEventListener('submit', getInput);
 
 
-const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-const btn = document.getElementById("help-btn");
+const btn = document.querySelectorAll("button");
+
+// All page modals
+const modals = document.querySelectorAll('.modal');
 
 // Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
+const spans = document.getElementsByClassName("close");
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+// When the user clicks the button, open the modal
+for (let i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+for (let i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (let index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+    if (event.target.classList.contains('modal')) {
+     for (let index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
   }
-} 

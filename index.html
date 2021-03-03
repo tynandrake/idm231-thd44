@@ -17,210 +17,213 @@
                 </div>    
             </form>
         </div>
-        <button id="help-btn">
-            <img src="images/help.svg" alt="help button">
+        <button class="modal-button" href="#myModal0" id="help-btn">
         </button>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h2>Help</h2>
-                </div>
-                <div class="modal-body">
-                    <p>Each of the albums on display are linked to a date on the zodiac calendar. Enter your birthday into the submition field 
-                        to discover which album aligns with your birthday.</p>
+        <div id="myModal0" class="modal">
+            <div class="modal-content" id="help-modal-container">
+                <div class="help-modal-content">
+                    <div class="modal-header" id="help-header">
+                        <span class="close">&times;</span>
+                        <h2>Help</h2>
+                    </div>
+                    <div class="modal-body" id="help-body">
+                        <p>Each of the albums on display are linked to a date on the zodiac calendar. Enter your birthday into the submition field 
+                            to discover which album aligns with your birthday.</p>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Albums -->
     <div class="container">
         <div class="col">
-            <button class="album" id="miseducation" data-file="ex_factor">
-                <div class="front">
-                    <img src="images/miseducational_of_laurynhill.jpg" alt="miseducation of lauryn hill cover">
-                </div>
-                <div class="back">
-                    <div class="details">
+    <!-- Miseducation -->
+            <button class="modal-button-album" href="#myModal1" id="miseducation" data-file="ex_factor"></button>
+            <!-- The Modal -->
+            <div id="myModal1" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
                         <h3 class="title">The Miseducation Of Lauryn Hill</h3>
-                    </div> 
-                    <div class="description">
+                        <img src="images/miseducational_of_laurynhill.jpg" alt="miseducation of lauryn hill cover">
                         <p>The Miseducation of Lauryn Hill progressively blended neo-soul, R&B, and hip-hop seamlessly, 
                             resulting in one of the most acclaimed albums of all time.</p>
                     </div>
                 </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="blonde" data-file="pink_white">
-                <div class="front">
-                    <img src="images/blonde.jpeg" alt="blonde cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Blonde</h3>
-                </div> 
-                <div class="description">
-                    <p>Blonde is the second studio album by American singer Frank Ocean. It was released on August 20, 2016, 
-                        as a timed exclusive on the iTunes Store and Apple Music.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="mbdtf" data-file="power">
-                <div class="front">
-                    <img src="images/mbdtf1.jpg" alt="my beautiful dark twisted fantasy cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">My Beautiful Dark Twisted Fantasy</h3>
-                </div> 
-                <div class="description">
-                    <p>My Beautiful Dark Twisted Fantasy is the fifth studio album by Kanye West. 
-                        It was released on November 22, 2010, by Def Jam Recordings.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="blueprint" data-file="u_dont_know">
-                <div class="front">
-                    <img src="images/bp1.jpg" alt="the blueprint cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">The Blueprint</h3>
-                </div> 
-                <div class="description">
-                    <p>The Blueprint is the highly-acclaimed sixth studio album by American rapper Jay-Z. It was released on September 11, 2001, 
-                        by Roc-A-Fella Records and Def Jam Recordings.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>     
-        </div>
-        <div class="col">
-            <button class="album" id="telefone" data-file="diddy_bop">
-                <div class="front">
-                    <img src="images/telefone.jpg" alt="telefone cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Telefone</h3>
-                </div> 
-                <div class="description">
-                    <p>Telefone is a mixtape by rapper Noname. Originally announced in 2012, the mixtape faced numerous delays 
-                        and was released four years later on July 31, 2016 as a free download.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="take-care" data-file="headlines">
-                <div class="front">
-                    <img src="images/take_care.jpg" alt="take care cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Take Care</h3>
-                </div> 
-                <div class="description">
-                    <p>Take Care is the second studio album by Canadian rapper Drake. It was released on November 15, 2011 by 
-                        Young Money Entertainment, Cash Money Records and Republic Records.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="stankonia" data-file="so_fresh_so_clean">
-                <div class="front">
-                    <img src="images/stankonia.jpg" alt="stankonia cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Stankonia</h3>
-                </div> 
-                <div class="description">
-                    <p>Stankonia is the fourth studio album by American hip-hop duo OutKast consisting of André 3000 & Big Boi. It was 
-                        released on October 31, 2000, by LaFace Records.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="swimming" data-file="2009">
-                <div class="front">
-                    <img src="images/swimming.jpg" alt="swimming cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Swimming</h3>
-                </div> 
-                <div class="description">
-                    <p>Swimming is the fifth and final studio album by American rapper and singer Mac Miller. It was released on August 3, 2018 
-                        by REMember Music and Warner Bros. Records.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>     
-        </div>
-        <div class="col">
-            <button class="album" id="under-pressure" data-file="gang_related">
-                <div class="front">
-                    <img src="images/under_pressure.jpg" alt="under pressure cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Under Pressure</h3>
-                </div> 
-                <div class="description">
-                    <p>Under Pressure is the debut studio album by American rapper Logic. It was released on October 21, 2014, by Visionary Music Group and Def Jam Recordings.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="monster" data-file="codeine_crazy">
-                <div class="front">
-                    <img src="images/monster.jpg" alt="monster cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Monster</h3>
-                </div> 
-                <div class="description">
-                    <p>Monster is the thirteenth mixtape by American rapper Future. It was released on October 28, 2014 by Freebandz Entertainment.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="eternal-atake" data-file="">
-                <div class="front">
-                    <img src="images/eternal_atake.jpg" alt="eternal atake cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">Eternal Atake</h3>
-                </div> 
-                <div class="description">
-                    <p>Eternal Atake is the second studio album by American rapper Lil Uzi Vert. After being initially announced in 2018, 
-                        the album was released on March 6, 2020, through Generation Now and Atlantic Records as a surprise release.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>
-            <button class="album" id="tpab" data-file="alright">
-                <div class="front">
-                    <img src="images/tpab.jpg" alt="to pimp a butterfly cover">
-                </div>
-                <div class="back">
-                <div class="details">
-                    <h3 class="title">To Pimp A Butterfly</h3>
-                </div> 
-                <div class="description">
-                    <p>To Pimp a Butterfly is the third studio album by rapper Kendrick Lamar. It was released on March 15, 2015, 
-                        by T.D.E, Aftermath Entertainment and Interscope Records.</p>
-                </div>
-                </div>
-            <div class="background"></div> 
-            </button>     
+            </div>
+
+    <!-- Blonde -->
+            <button class="modal-button-album" href="#myModal2" id="blonde" data-file="pink_white"></button>
+            <!-- The Modal -->
+            <div id="myModal2" class="modal">
+    
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Blonde</h3>
+                        <img src="images/blonde.jpeg" alt="blonde cover">
+                        <p>Blonde is the second studio album by American singer Frank Ocean. It was released on August 20, 2016, 
+                                as a timed exclusive on the iTunes Store and Apple Music.</p>
+                    </div>
+                </div>  
+            </div>
+    <!-- MBDTF -->
+            <button class="modal-button-album" href="#myModal3" id="mbdtf" data-file="power"></button>
+            <!-- The Modal -->
+            <div id="myModal3" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">My Beautiful Dark Twisted Fantasy</h3>
+                        <img src="images/mbdtf1.jpg" alt="my beautiful dark twisted fantasy cover">
+                        <p>My Beautiful Dark Twisted Fantasy is the fifth studio album by Kanye West. 
+                                It was released on November 22, 2010, by Def Jam Recordings.</p>
+                    </div>
+                </div>  
+            </div>
+    <!-- Blueprint -->
+            <button class="modal-button-album" href="#myModal4" id="blueprint" data-file="u_dont_know"></button>
+            <!-- The Modal -->
+            <div id="myModal4" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">The Blueprint</h3>
+                        <img src="images/bp1.jpg" alt="the blueprint cover">
+                        <p>The Blueprint is the highly-acclaimed sixth studio album by American rapper Jay-Z. It was released on September 11, 2001, 
+                                by Roc-A-Fella Records and Def Jam Recordings.</p>
+                    </div>
+                </div>  
+            </div>  
         </div>
 
-        
-
+        <div class="col">
+    <!-- Telefone -->
+            <button class="modal-button-album" href="#myModal5" id="telefone" data-file="diddy_bop"></button>
+            <!-- The Modal -->
+            <div id="myModal5" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Telefone</h3>
+                        <img src="images/telefone.jpg" alt="telefone cover">
+                        <p>Telefone is a mixtape by rapper Noname. Originally announced in 2012, the mixtape faced numerous delays 
+                                and was released four years later on July 31, 2016 as a free download.</p>
+                    </div>
+                </div>  
+            </div>
+    <!-- Take Care -->
+            <button class="modal-button-album" href="#myModal6" id="take-care" data-file="headlines"></button>
+            <!-- The Modal -->
+            <div id="myModal6" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Take Care</h3>
+                        <img src="images/take_care.jpg" alt="take care cover">
+                        <p>Take Care is the second studio album by Canadian rapper Drake. It was released on November 15, 2011 by 
+                                Young Money Entertainment, Cash Money Records and Republic Records.</p>
+                    </div>
+                </div>  
+            </div>
+    <!-- Stankonia -->
+            <button class="modal-button-album" href="#myModal7" id="stankonia" data-file="so_fresh_so_clean"></button>
+            <!-- The Modal -->
+            <div id="myModal7" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Stankonia</h3>
+                        <img src="images/stankonia.jpg" alt="stankonia cover">
+                        <p>Stankonia is the fourth studio album by American hip hop duo OutKast. It was released on October 31, 
+                            2000, by LaFace Records.</p>
+                    </div>
+                </div>  
+            </div>
+    <!-- Swimming -->
+            <button class="modal-button-album" href="#myModal8" id="swimming" data-file="2009"></button>
+            <!-- The Modal -->
+            <div id="myModal8" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Swimming</h3>
+                        <img src="images/swimming.jpg" alt="swimming  cover">
+                        <p>Swimming is the fifth and final studio album by American rapper and singer Mac Miller. It was released on August 3, 2018 
+                                by REMember Music and Warner Bros. Records.</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="col">
+    <!-- Under Pressure -->
+            <button class="modal-button-album" href="#myModal9" id="under-pressure" data-file="gang_related"></button>
+            <!-- The Modal -->
+            <div id="myModal9" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Under Pressure</h3>
+                        <img src="images/under_pressure.jpg" alt="under pressure cover">
+                        <p>Under Pressure is the debut studio album by American rapper Logic. It was released on October 21, 2014, by Visionary Music Group and Def Jam Recordings.</p>
+                    </div>
+                </div>  
+            </div>    
+    <!-- Monster -->
+            <button class="modal-button-album" href="#myModal10" id="monster" data-file="codeine_crazy"></button>
+            <!-- The Modal -->
+            <div id="myModal10" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Monster</h3>
+                        <img src="images/monster.jpg" alt="monster cover">
+                        <p>Monster is the thirteenth mixtape by American rapper Future. It was released on October 28, 2014 by Freebandz Entertainment.</p>
+                    </div>
+                </div>  
+            </div>      
+    <!-- Eternal Atake -->
+            <button class="modal-button-album" href="#myModal11" id="eternal-atake" data-file=""></button>
+            <!-- The Modal -->
+            <div id="myModal11" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">Eternal Atake</h3>
+                        <img src="images/eternal_atake.jpg" alt="eternal atake cover">
+                        <p>Eternal Atake is the second studio album by American rapper Lil Uzi Vert. After being initially announced in 2018, 
+                                the album was released on March 6, 2020, through Generation Now and Atlantic Records as a surprise release.</p>
+                    </div>
+                </div>  
+            </div>   
+    <!-- TPAB -->
+            <button class="modal-button-album" href="#myModal12" id="tpab" data-file="alright"></button>
+            <!-- The Modal -->
+            <div id="myModal12" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="album-modal-grid">
+                        <span class="close">&times;</span>
+                        <h3 class="title">To Pimp A Butterfly</h3>
+                        <img src="images/tpab.jpg" alt="to pimp a butterfly cover">
+                        <p>To Pimp a Butterfly is the third studio album by rapper Kendrick Lamar. It was released on March 15, 2015, 
+                                by T.D.E, Aftermath Entertainment and Interscope Records.</p>
+                    </div>
+                </div>  
+            </div>           
+        </div>
 
     <audio src="" id="music-player"></audio>
     <script src="main.js"></script>

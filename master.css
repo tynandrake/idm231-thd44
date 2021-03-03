@@ -16,6 +16,7 @@
 }
 body {
     overflow: hidden;
+    background-color: #f6f6f6;
 }
 p {
     font-size: 1rem;
@@ -29,6 +30,9 @@ select, form {
 }
 img {
     max-width: 100%;
+}
+button {
+    cursor: pointer;
 }
 
 
@@ -66,77 +70,37 @@ img {
 /* HELP BTN + MODAL */
 
 #help-btn {
+    width: 50px;
+    height: 50px;
     flex: 0 1 auto;
     margin-left: auto; 
-    cursor: pointer;
-    padding-right: 4.5rem;
+    margin-right: 4.5rem;
+    background-image: url(images/help.svg);
+    background-size: contain;
     border: none;
+}
+#myModal0 {
+    padding-top: 200px; /* Location of the box */
+    left: 650px; /* Location of the box */
     background: none;
 }
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 35%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
+#help-modal-container {
+    width: 20%;
+    height: 20rem;
+    -webkit-animation-name: animateleft;
     -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
+    animation-name: animateleft;
     animation-duration: 0.4s
 }
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+#help-header h2{
+    padding: 2rem 2rem 0 2rem;
+    font-size: 2rem;
+    font-family: 'Rockwell-Extra-Bold';
 }
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-.modal-header {
-    padding: 2px 16px;
-    background-color: #6f00ff;
-    color: white;
-    font-family: 'Georgia';
-}
-.modal-body {
+#help-body p {
     padding: 2rem;
+    font-size: 1.3rem;
 }
-
-
-
-
 
 
 /* USER INPUT */
@@ -158,89 +122,172 @@ img {
     border: none;
     background: none;
     text-align: left;
+    transition: .3s;
 }
 .title {
     font-family: 'Rockwell-Extra-Bold';
-    margin-bottom: 0.5rem;
-}
-.front {
-    transition: 250ms;
-}
-.back {
-    opacity: 0;
-}
-.background {
-    background: rgb(37, 34, 68);
-    position: absolute;
-    top: 0; 
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
-    z-index: -1;
-    transform: scale(.6, 1.2);
-    border-radius: 0.5rem;
-    opacity: 0;
+    font-size: 1.6rem;
+    grid-column: 1 / span 2; 
+    grid-row: 1;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 2rem;
 }
 
-/* Album Backgrounds */
-#miseducation .background {
-    background: #faeec5;
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    transition: .4s;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-#blonde .background {
-    background: #ace095;
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
-#mbdtf .background {
-    background: #df8383;
+
+.modal-button-album {
+    width: 186px;
+    height: 186px;
+    background-size: contain;
+    border: none;
+    margin: .25rem;
+    transition: .3s;
 }
-#blueprint .background {
-    background: #839fdf;
+.modal-button-album:hover {
+    transform: translateY(-15%);
+    overflow: hidden;
 }
-#telefone .background {
-    background: #b592c4;
+#miseducation {
+    background-image: url("images/miseducational_of_laurynhill.jpg");
 }
-#take-care .background {
-    background: #e4dbb5;
+#blonde {
+    background-image: url("images/blonde.jpeg");
 }
-#stankonia .background {
-    background: #dbdbdb;
+#mbdtf {
+    background-image: url("images/mbdtf1.jpg");
 }
-#swimming .background {
-    background: #dfb2c4;
+#blueprint {
+    background-image: url("images/bp1.jpg");
 }
-#under-pressure .background {
-    background: #e0cd9b;
+#telefone {
+    background-image: url("images/telefone.jpg");
 }
-#monster .background {
-    background: #c87d76;
+#take-care {
+    background-image: url("images/take_care.jpg");
 }
-#eternal-atake .background {
-    background: #8fc2d8;
+#stankonia {
+    background-image: url("images/stankonia.jpg");
 }
-#tpab .background {
-    background: #d2d5d6;
+#swimming {
+    background-image: url("images/swimming.jpg");
+}
+#under-pressure {
+    background-image: url("images/under_pressure.jpg");
+}
+#monster {
+    background-image: url("images/monster.jpg");
+}
+#eternal-atake {
+    background-image: url("images/eternal_atake.jpg");
+}
+#tpab {
+    background-image: url("images/tpab.jpg");
+}
+.album-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    max-height: 30rem;
+}
+.album-modal-grid img{
+    padding: 1rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    width: 20rem;
+    grid-column: 1 / span 2; 
+    grid-row: 2;
+}
+.album-modal-grid p{
+    padding-top: 2rem;
+    padding-right: 2rem;
+    margin-right: 2rem;
+    grid-column: 3 / span 2; 
+    grid-row: 2 / span 3;
+    font-size: 1.2rem;
+}
+.album-modal-grid h3{
+    font-family: 'Rockwell-Extra-Bold';
+    font-size: 1.6rem;
+    grid-column: 1 / span 2; 
+    grid-row: 1;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 2rem;
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+@-webkit-keyframes animateleft {
+    from {right:-300px; opacity:0} 
+    to {right:0; opacity:1}
+}
+@keyframes animateleft {
+    from {right:-300px; opacity:0} 
+    to {right:0; opacity:1}
+}
+
+.close {
+    color: grey;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    grid-column: 4;
+    justify-self: end;
+    padding-top: 2rem;
+    padding-right: 2rem;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
 /* Animation */
-.album:not(.no-hover):hover .front{
+.album:not(.no-hover):hover {
     transform: translateY(-15%);
     overflow: hidden;
 }
-.active{
-    z-index: 999;
-}
-.active .background {
-    transition: transform 350ms ease-in-out, opacity 100ms linear;
-    transform: scale(1.5, 1.7) translateY(25%);
-    opacity: 1;
-}
-.active .front {
-    transform: translateY(-45%);
-}
-.active .back {
-    transform: translateY(-40%);
-    opacity: 1;
-}
+
+
+
+
 
 
 
