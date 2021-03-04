@@ -152,7 +152,7 @@ button {
 }
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #f3f3f3;
     margin: auto;
     padding: 0;
     width: 50%;
@@ -243,6 +243,16 @@ button {
     padding-left: 2rem;
     padding-right: 2rem;
     margin-left: 2rem;
+}
+.album-modal-grid h4{
+    font-family: 'Rockwell-Extra-Bold';
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    margin-right: 2rem;
+    grid-column: 4; 
+    grid-row: 5;
+    font-size: 1.1rem;
+    color: rgb(175, 175, 175);
 }
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 

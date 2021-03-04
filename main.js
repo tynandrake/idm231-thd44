@@ -72,93 +72,63 @@ capricorn.addEventListener('click', function (ev) {
     userPicked(idName);
   });
 
+
+
+const miseducationObj = document.getElementById('myModal1');
+const blondeObj = document.getElementById('myModal2');
+const mbdtfObj = document.getElementById('myModal3');
+const blueprintObj = document.getElementById('myModal4');
+const telefoneObj = document.getElementById('myModal5');
+const takeCareObj = document.getElementById('myModal6');
+const stankoniaObj = document.getElementById('myModal7');
+const swimmingObj = document.getElementById('myModal8');
+const underPressureObj = document.getElementById('myModal9');
+const monsterObj = document.getElementById('myModal10');
+const eternalAtakeObj = document.getElementById('myModal11');
+const tpabObj = document.getElementById('myModal12');
+
 function userPicked(whichOne) {
     console.log('userPicked called: ' + whichOne);
     switch (whichOne) {
       case 'miseducation':
-            btn
-        // display date range
-        // display description
-        // play sound
+          miseducationObj.style.display = "block";
+          init;
         break;
       case 'blonde':
-            btn
-        // displayObj.src = 'img/ful_scorpio.png';
-         // display date range
-        // display description
-        // play sound
+          blondeObj.style.display = "block";
         break;  
       case 'mbdtf':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          mbdtfObj.style.display = "block";
         break;
       case 'blueprint':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          blueprintObj.style.display = "block";
         break;
       case 'telefone':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          telefoneObj.style.display = "block";
         break;
       case 'take-care':
-            btn
-        // display date range
-        // display description
-        // play sound
+          takeCareObj.style.display = "block";
         break;
       case 'stankonia':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          stankoniaObj.style.display = "block";
         break;
       case 'swimming':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          swimmingObj.style.display = "block";
         break;
       case 'under-pressure':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          underPressureObj.style.display = "block";
         break;
       case 'monster':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          monsterObj.style.display = "block";
         break;
       case 'eternal-atake':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          eternalAtakeObj.style.display = "block";
         break;
       case 'tpab':
-            btn
-        // displayObj.src = 'img/ful_aquarius.png';
-        // display date range
-        // display description
-        // play sound
+          tpabObj.style.display = "block";
         break;
       default:
-        // displayObj.src = 'img/ful_blank.png';
+
     }
   }
 
@@ -218,7 +188,6 @@ document.addEventListener('DOMContentLoaded', init);
         audio.src = src;
         audio.play();
     };
-
 // Get Date
 
 
@@ -228,43 +197,46 @@ function getInput(evt) {
     const $form = document.getElementById('userSubmit');
     $form.addEventListener('submit', getInput);
 
+    // Get the user date and extract the month of year and day of month
     const userBday = new Date(document.getElementById('bday').value);
     console.log('userBday is: ' + userBday);
 
-    let userMonth = userBday.getUTCMonth();
-    userMonth++;
-    console.log('userMonth is: ' + userMonth);
+    // Figure out the zodiac sign based on month and of year and day of month
+    let whichMonth = userBday.getUTCMonth();
+    whichMonth++;
+    console.log('whichMonth is: ' + whichMonth);
 
+    const whichDayOfMonth = userBday.getUTCDate();
+    console.log('whichDayOfMonth is: ' + whichDayOfMonth);
 
     document.forms[0].reset();
 
 
-    
     let AstroSign = "";
 
-    if ((userMonth == 12 && userBday >= 22) || (userMonth == 1 && userBday <= 19)) {
+    if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
       AstroSign = "tpab";
-    } else if ((userMonth == 11 && userBday >= 22) || (userMonth == 12 && userBday <= 21)) {
+    } else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
       AstroSign = "eternal-atake";
-    } else if ((userMonth == 10 && userBday >= 24) || (userMonth == 11 && userBday <= 21)) {
+    } else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
       AstroSign = "monster";
-    } else if ((userMonth == 9 && userBday >= 23) || (userMonth == 10 && userBday <= 23)) {
+    } else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
       AstroSign = "under-pressure";
-    } else if ((userMonth == 8 && userBday >= 23) || (userMonth == 9 && userBday <= 22)) {
+    } else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
       AstroSign = "swimming";
-    } else if ((userMonth == 7 && userBday >= 23) || (userMonth == 8 && userBday <= 22)) {
+    } else if ((whichMonth == 7 && whichDayOfMonth >= 23) || (whichMonth == 8 && whichDayOfMonth <= 22)) {
       AstroSign = "stankonia";
-    } else if ((userMonth == 6 && userBday >= 22) || (userMonth == 7 && userBday <= 22)) {
+    } else if ((whichMonth == 6 && whichDayOfMonth >= 22) || (whichMonth == 7 && whichDayOfMonth <= 22)) {
       AstroSign = "take-care";
-    } else if ((userMonth == 5 && userBday >= 21) || (userMonth == 6 && userBday <= 21)) {
+    } else if ((whichMonth == 5 && whichDayOfMonth >= 21) || (whichMonth == 6 && whichDayOfMonth <= 21)) {
       AstroSign = "telefone";
-    } else if ((userMonth == 4 && userBday >= 20) || (userMonth == 5 && userBday <= 20)) {
+    } else if ((whichMonth == 4 && whichDayOfMonth >= 20) || (whichMonth == 5 && whichDayOfMonth <= 20)) {
       AstroSign = "blueprint";
-    } else if ((userMonth == 3 && userBday >= 21) || (userMonth == 4 && userBday <= 19)) {
+    } else if ((whichMonth == 3 && whichDayOfMonth >= 21) || (whichMonth == 4 && whichDayOfMonth <= 19)) {
       AstroSign = "mbdtf";
-    } else if ((userMonth == 2 && userBday >= 19) || (userMonth == 3 && userBday <= 20)) {
+    } else if ((whichMonth == 2 && whichDayOfMonth >= 19) || (whichMonth == 3 && whichDayOfMonth <= 20)) {
       AstroSign = "blonde";
-    } else if ((userMonth == 1 && userBday >= 20) || (userMonth == 2 && userBday <= 18)) {
+    } else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
       AstroSign = "miseducation";
     }
 
@@ -279,38 +251,44 @@ $form.addEventListener('submit', getInput);
 
 
 
-// Get the button that opens the modal
-const btn = document.querySelectorAll("button");
 
-// All page modals
-const modals = document.querySelectorAll('.modal');
 
-// Get the <span> element that closes the modal
-const spans = document.getElementsByClassName("close");
 
-// When the user clicks the button, open the modal
-for (let i = 0; i < btn.length; i++) {
- btn[i].onclick = function(e) {
-    e.preventDefault();
-    modal = document.querySelector(e.target.getAttribute("href"));
-    modal.style.display = "block";
- }
-}
-
-// When the user clicks on <span> (x), close the modal
-for (let i = 0; i < spans.length; i++) {
- spans[i].onclick = function() {
-    for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-    }
- }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-     for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-     }
-    }
+  // Get the button that opens the modal
+  const btn = document.querySelectorAll("button.modal-button-album, button.modal-button");
+  
+  // All page modals
+  const modals = document.querySelectorAll('.modal');
+  
+  // Get the <span> element that closes the modal
+  const spans = document.getElementsByClassName("close");
+  
+  // When the user clicks the button, open the modal
+  for (let i = 0; i < btn.length; i++) {
+   btn[i].onclick = function(e) {
+      e.preventDefault();
+      modal = document.querySelector(e.target.getAttribute("href"));
+      modal.style.display = "block";
+   }
   }
+  
+  // When the user clicks on <span> (x), close the modal
+  for (let i = 0; i < spans.length; i++) {
+   spans[i].onclick = function() {
+      for (let index in modals) {
+        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      }
+   }
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+       for (let index in modals) {
+        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+       }
+      }
+    }
+
+
+
