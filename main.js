@@ -73,7 +73,7 @@ capricorn.addEventListener('click', function (ev) {
   });
 
 
-
+// Initializing Album Modals
 const miseducationObj = document.getElementById('myModal1');
 const blondeObj = document.getElementById('myModal2');
 const mbdtfObj = document.getElementById('myModal3');
@@ -87,110 +87,161 @@ const monsterObj = document.getElementById('myModal10');
 const eternalAtakeObj = document.getElementById('myModal11');
 const tpabObj = document.getElementById('myModal12');
 
+// Initializing Audio Sounds
+const playMis = document.getElementById('ex_factor');
+const playBlonde = document.getElementById('pink_white');
+const playMbdtf = document.getElementById('power');
+const playBlueprint = document.getElementById('u_dont_know');
+const playTelefone = document.getElementById('diddy_bop');
+const playTakeCare = document.getElementById('headlines');
+const playStankonia = document.getElementById('so_fresh_so_clean');
+const playSwimming = document.getElementById('2009');
+const playUnderPressure = document.getElementById('gang_related');
+const playMonster = document.getElementById('codeine_crazy');
+const playEternalAtake = document.getElementById('');
+const playTpab = document.getElementById('alright');
+
+// Play Audio
+function playAudio(song) {
+  switch(song) {
+    case 'miseducation':
+       playMis.play();
+      break;
+    case 'blonde':
+      playBlonde.play();
+      break;
+    case 'mbdtf':
+      playMbdtf.play();
+      break;
+    case 'blueprint':
+      playBlueprint.play();
+      break;
+    case 'telefone':
+      playTelefone.play();
+      break;
+    case 'take-care':
+      playTakeCare.play();
+      break;
+    case 'stankonia':
+      playStankonia.play();
+      break;
+    case 'swimming':
+      playSwimming.play();
+      break;
+    case 'under-pressure':
+      playUnderPressure.play();
+      break;
+    case 'monster':
+      playMonster.play();
+      break;
+    case 'eternal-atake':
+      playEternalAtake.play();
+      break;
+    case 'tpab':
+      playTpab.play();
+      break;
+    default: 
+      return null;
+  }
+}
+
+function pauseAudio() {
+  playMis.pause();
+  playMis.currentTime = 0;
+
+  playBlonde.pause();
+  playBlonde.currentTime = 0;
+
+  playMbdtf.pause();
+  playMbdtf.currentTime = 0;
+
+  playBlueprint.pause();
+  playBlueprint.currentTime = 0;
+
+  playTelefone.pause();
+  playTelefone.currentTime = 0;
+
+  playTakeCare.pause();
+  playTakeCare.currentTime = 0;
+
+  playStankonia.pause();
+  playStankonia.currentTime = 0;
+
+  playSwimming.pause();
+  playSwimming.currentTime = 0;
+
+  playUnderPressure.pause();
+  playUnderPressure.currentTime = 0;
+
+  playMonster.pause();
+  playMonster.currentTime = 0;
+
+  // playEternalAtake.pause();
+  // playEternalAtake.currentTime = 0;
+
+  playTpab.pause();
+  playTpab.currentTime = 0;
+}
+
+// UserPick Function
 function userPicked(whichOne) {
     console.log('userPicked called: ' + whichOne);
     switch (whichOne) {
       case 'miseducation':
           miseducationObj.style.display = "block";
-          init;
+          playAudio('miseducation');
         break;
       case 'blonde':
           blondeObj.style.display = "block";
+        playAudio('blonde');
         break;  
       case 'mbdtf':
           mbdtfObj.style.display = "block";
+        playAudio('mbdtf');
         break;
       case 'blueprint':
           blueprintObj.style.display = "block";
+        playAudio('blueprint');
         break;
       case 'telefone':
           telefoneObj.style.display = "block";
+        playAudio('telefone');
         break;
       case 'take-care':
           takeCareObj.style.display = "block";
+        playAudio('take-care');
         break;
       case 'stankonia':
           stankoniaObj.style.display = "block";
+        playAudio('stankonia');
         break;
       case 'swimming':
           swimmingObj.style.display = "block";
+        playAudio('swimming');
         break;
       case 'under-pressure':
           underPressureObj.style.display = "block";
+        playAudio('under-pressure');
         break;
       case 'monster':
           monsterObj.style.display = "block";
+        playAudio('monster');
         break;
       case 'eternal-atake':
           eternalAtakeObj.style.display = "block";
+        playAudio('eternal-atake');
         break;
       case 'tpab':
           tpabObj.style.display = "block";
+        playAudio('tpab');
         break;
       default:
 
     }
   }
 
-// Audio
-document.addEventListener('DOMContentLoaded', init);
-    const SOUNDS = {};
-    
-    function init() {
-        let miseducation = document.getElementById('miseducation');
-        miseducation.addEventListener('click', play);
-        
-        let blonde = document.getElementById('blonde');
-        blonde.addEventListener('click', play);
-        
-        let mbdtf = document.getElementById('mbdtf');
-        mbdtf.addEventListener('click', play);
-                
-        let blueprint = document.getElementById('blueprint');
-        blueprint.addEventListener('click', play);
-                
-        let telefone = document.getElementById('telefone');
-        telefone.addEventListener('click', play);
-                
-        let takeCare = document.getElementById('take-care');
-        takeCare.addEventListener('click', play);
-                
-        let stankonia = document.getElementById('stankonia');
-        stankonia.addEventListener('click', play);
-                
-        let swimming = document.getElementById('swimming');
-        swimming.addEventListener('click', play);
-                
-        let underPressure = document.getElementById('under-pressure');
-        underPressure.addEventListener('click', play);
-                
-        let monster = document.getElementById('monster');
-        monster.addEventListener('click', play);
-                
-        let eternalAtake = document.getElementById('eternal-atake');
-        eternalAtake.addEventListener('click', play);
-                
-        let tpab = document.getElementById('tpab');
-        tpab.addEventListener('click', play);
-        
-    };
-
-    function play(ev){
-        let p = ev.currentTarget;
-        ev.preventDefault();
-
-        let fn = p.getAttribute('data-file');
-        let src = './sounds/' + fn + '.mp3';
-        console.log(src);
-
-        let audio = document.getElementById("music-player");
-
-        audio.src = src;
-        audio.play();
-    };
+ 
 // Get Date
-
-
 function getInput(evt) {
     evt.preventDefault();
     
@@ -252,43 +303,42 @@ $form.addEventListener('submit', getInput);
 
 
 
+// Get the button that opens the modal
+const btn = document.querySelectorAll("button.modal-button-album, button.modal-button");
 
+// All page modals
+const modals = document.querySelectorAll('.modal');
 
-  // Get the button that opens the modal
-  const btn = document.querySelectorAll("button.modal-button-album, button.modal-button");
-  
-  // All page modals
-  const modals = document.querySelectorAll('.modal');
-  
-  // Get the <span> element that closes the modal
-  const spans = document.getElementsByClassName("close");
-  
-  // When the user clicks the button, open the modal
-  for (let i = 0; i < btn.length; i++) {
-   btn[i].onclick = function(e) {
-      e.preventDefault();
-      modal = document.querySelector(e.target.getAttribute("href"));
-      modal.style.display = "block";
-   }
+// Get the <span> element that closes the modal
+const spans = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the modal
+for (let i = 0; i < btn.length; i++) {
+  btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
   }
-  
-  // When the user clicks on <span> (x), close the modal
-  for (let i = 0; i < spans.length; i++) {
-   spans[i].onclick = function() {
+}
+
+// When the user clicks on <span> (x), close the modal
+for (let i = 0; i < spans.length; i++) {
+  spans[i].onclick = function() {
+    for (let index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
       for (let index in modals) {
-        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-      }
-   }
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target.classList.contains('modal')) {
-       for (let index in modals) {
-        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-       }
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+      pauseAudio();    
       }
     }
+  }
 
 
 
