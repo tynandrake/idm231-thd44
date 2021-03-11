@@ -56,7 +56,6 @@ button {
     width: 100%;
     top: 50px;
 }
-
 .container-date {
     flex: 0 1 auto;
     position: absolute;             
@@ -90,7 +89,7 @@ button {
     -webkit-animation-name: animateleft;
     -webkit-animation-duration: 0.4s;
     animation-name: animateleft;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 #help-header h2{
     padding: 2rem 2rem 0 2rem;
@@ -105,9 +104,7 @@ button {
 
 /* USER INPUT */
 #bday {
-    width: 90px;
     font-family: 'Georgia';
-    display: inline;
 }
 
 
@@ -135,6 +132,7 @@ button {
     margin-left: 2rem;
 }
 
+/* Modals */
 
 .modal {
     display: none; /* Hidden by default */
@@ -155,15 +153,14 @@ button {
     background-color: #f3f3f3;
     margin: auto;
     padding: 0;
-    width: 50%;
+    width: 840px;
     border-radius: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
-
 .modal-button-album {
     width: 186px;
     height: 186px;
@@ -176,6 +173,9 @@ button {
     transform: translateY(-15%);
     overflow: hidden;
 }
+
+/* Btn Covers */
+
 #miseducation {
     background-image: url("images/miseducational_of_laurynhill.jpg");
 }
@@ -203,15 +203,18 @@ button {
 #under-pressure {
     background-image: url("images/under_pressure.jpg");
 }
-#monster {
-    background-image: url("images/monster.jpg");
+#astroworld {
+    background-image: url("images/astroworld.jpg");
 }
-#eternal-atake {
-    background-image: url("images/eternal_atake.jpg");
+#illmatic {
+    background-image: url("images/illmatic.jpg");
 }
 #tpab {
     background-image: url("images/tpab.jpg");
 }
+
+/* Album Modal Content */
+
 .album-modal-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -254,22 +257,8 @@ button {
     font-size: 1.1rem;
     color: rgb(175, 175, 175);
 }
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-@-webkit-keyframes animateleft {
-    from {right:-300px; opacity:0} 
-    to {right:0; opacity:1}
-}
-@keyframes animateleft {
-    from {right:-300px; opacity:0} 
-    to {right:0; opacity:1}
-}
+
+/* Close Btn */
 
 .close {
     color: grey;
@@ -290,11 +279,27 @@ button {
 
 
 /* Animation */
+
 .album:not(.no-hover):hover {
     transform: translateY(-15%);
     overflow: hidden;
 }
-
+@-webkit-keyframes animatetop {
+    from {top:-400px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-400px; opacity:0}
+    to {top:0; opacity:1}
+}
+@-webkit-keyframes animateleft {
+    from {right:-300px; opacity:0} 
+    to {right:0; opacity:1}
+}
+@keyframes animateleft {
+    from {right:-300px; opacity:0} 
+    to {right:0; opacity:1}
+}
 
 
 

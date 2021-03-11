@@ -7,8 +7,8 @@ const cancer = document.getElementById('take-care');
 const leo = document.getElementById('stankonia');
 const virgo = document.getElementById('swimming');
 const libra = document.getElementById('under-pressure');
-const scorpio = document.getElementById('monster');
-const sagittarius = document.getElementById('eternal-atake');
+const scorpio = document.getElementById('astroworld');
+const sagittarius = document.getElementById('illmatic');
 const capricorn = document.getElementById('tpab');
 
 aquarius.addEventListener('click', function (ev) {
@@ -83,8 +83,8 @@ const takeCareObj = document.getElementById('myModal6');
 const stankoniaObj = document.getElementById('myModal7');
 const swimmingObj = document.getElementById('myModal8');
 const underPressureObj = document.getElementById('myModal9');
-const monsterObj = document.getElementById('myModal10');
-const eternalAtakeObj = document.getElementById('myModal11');
+const astroworldObj = document.getElementById('myModal10');
+const illmaticObj = document.getElementById('myModal11');
 const tpabObj = document.getElementById('myModal12');
 
 // Initializing Audio Sounds
@@ -97,8 +97,8 @@ const playTakeCare = document.getElementById('headlines');
 const playStankonia = document.getElementById('so_fresh_so_clean');
 const playSwimming = document.getElementById('2009');
 const playUnderPressure = document.getElementById('gang_related');
-const playMonster = document.getElementById('codeine_crazy');
-const playEternalAtake = document.getElementById('');
+const playAstroworld = document.getElementById('butterfly_effect');
+const playIllmatic = document.getElementById('nysom');
 const playTpab = document.getElementById('alright');
 
 // Play Audio
@@ -131,11 +131,11 @@ function playAudio(song) {
     case 'under-pressure':
       playUnderPressure.play();
       break;
-    case 'monster':
-      playMonster.play();
+    case 'astroworld':
+      playAstroworld.play();
       break;
-    case 'eternal-atake':
-      playEternalAtake.play();
+    case 'illmatic':
+      playIllmatic.play();
       break;
     case 'tpab':
       playTpab.play();
@@ -173,11 +173,11 @@ function pauseAudio() {
   playUnderPressure.pause();
   playUnderPressure.currentTime = 0;
 
-  playMonster.pause();
-  playMonster.currentTime = 0;
+  playAstroworld.pause();
+  playAstroworld.currentTime = 0;
 
-  // playEternalAtake.pause();
-  // playEternalAtake.currentTime = 0;
+  playIllmatic.pause();
+  playIllmatic.currentTime = 0;
 
   playTpab.pause();
   playTpab.currentTime = 0;
@@ -223,13 +223,13 @@ function userPicked(whichOne) {
           underPressureObj.style.display = "block";
         playAudio('under-pressure');
         break;
-      case 'monster':
-          monsterObj.style.display = "block";
-        playAudio('monster');
+      case 'astroworld':
+          astroworldObj.style.display = "block";
+        playAudio('astroworld');
         break;
-      case 'eternal-atake':
-          eternalAtakeObj.style.display = "block";
-        playAudio('eternal-atake');
+      case 'illmatic':
+          illmaticObj.style.display = "block";
+        playAudio('illmatic');
         break;
       case 'tpab':
           tpabObj.style.display = "block";
@@ -268,9 +268,9 @@ function getInput(evt) {
     if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
       AstroSign = "tpab";
     } else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
-      AstroSign = "eternal-atake";
+      AstroSign = "illmatic";
     } else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
-      AstroSign = "monster";
+      AstroSign = "astroworld";
     } else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
       AstroSign = "under-pressure";
     } else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
@@ -325,7 +325,8 @@ for (let i = 0; i < btn.length; i++) {
 for (let i = 0; i < spans.length; i++) {
   spans[i].onclick = function() {
     for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none"; 
+      pauseAudio();   
     }
   }
 }
