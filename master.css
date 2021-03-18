@@ -43,7 +43,7 @@ button {
 /* GENERAL LAYOUT */
 
 .container {
-    height: 100vh;
+    height: 107vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,7 @@ button {
     justify-content: flex-start;   
     position: absolute;            
     width: 100%;
-    top: 3.125rem;
+    top: 2rem;
 }
 .container-date {
     flex: 0 1 auto;
